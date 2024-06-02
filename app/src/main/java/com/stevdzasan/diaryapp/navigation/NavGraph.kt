@@ -230,14 +230,14 @@ fun NavGraphBuilder.writeRoute(navigateBack: () -> Unit) {
         val context = LocalContext.current
         val uiState = viewModel.uiState
         val galleryState = viewModel.galleryState
-        val pagerState = rememberPagerState(pageCount = { Mood.values().size })
+        val pagerState = rememberPagerState(pageCount = { Mood.entries.size })
         val pageNumber by remember { derivedStateOf { pagerState.currentPage } }
 
         WriteScreen(
             uiState = uiState,
             pagerState = pagerState,
             galleryState = galleryState,
-            moodName = { Mood.values()[pageNumber].name },
+            moodName = { Mood.entries[pageNumber].name },
             onTitleChanged = { viewModel.setTitle(title = it) },
             onDescriptionChanged = { viewModel.setDescription(description = it) },
             onDateTimeUpdated = { viewModel.updateDateTime(zonedDateTime = it) },
@@ -263,7 +263,7 @@ fun NavGraphBuilder.writeRoute(navigateBack: () -> Unit) {
             },
             onSaveClicked = {
                 viewModel.upsertDiary(
-                    diary = it.apply { mood = Mood.values()[pageNumber].name },
+                    diary = it.apply { mood = Mood.entries[pageNumber].name },
                     onSuccess = navigateBack,
                     onError = { message ->
                         Toast.makeText(

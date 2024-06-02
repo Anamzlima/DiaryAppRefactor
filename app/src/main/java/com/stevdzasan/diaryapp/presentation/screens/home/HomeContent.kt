@@ -17,6 +17,7 @@ import androidx.compose.ui.unit.dp
 import com.stevdzasan.diaryapp.model.Diary
 import com.stevdzasan.diaryapp.presentation.components.DiaryHolder
 import java.time.LocalDate
+import java.util.Locale
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
@@ -61,7 +62,7 @@ fun DateHeader(localDate: LocalDate) {
     ) {
         Column(horizontalAlignment = Alignment.End) {
             Text(
-                text = String.format("%02d", localDate.dayOfMonth),
+                text = String.format(Locale.ROOT,"%02d", localDate.dayOfMonth),
                 style = TextStyle(
                     fontSize = MaterialTheme.typography.titleLarge.fontSize,
                     fontWeight = FontWeight.Light
