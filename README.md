@@ -53,11 +53,10 @@ These are the key parameters for DiaryApp.
 
 | Parameters     | Value |
 |----------------|-------|
-| compileSdk     | 33    |
-| targetSdk      | 33    |
-| minSdk         | 21    |
-| composeVersion | 1.4.0 |
-| kotlinVersion  | 1.8.0 |
+| compileSdk     | 34    |
+| targetSdk      | 34    |
+| minSdk         | 23    |
+| kotlinVersion  | 2.0.0 |
 
 You can clone the repository or download the Zip file [here](https://github.com/stevdza-san/DiaryApp)
 
